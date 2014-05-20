@@ -4,7 +4,7 @@ body {font-weight:normal;font-Family:"맑은 고딕", "Malgun Gothic", "나눔�
    meni div
 ================================================== */
 .moreDown {
-    text-align: center;
+    text-align: left;
 }
 
 /* ==================================================
@@ -29,7 +29,7 @@ article { position:relative;
 /* ==================================================
    Title Styles
 ================================================== */
-.title{ padding-bottom: 4%; }
+.title{ padding-bottom: 4%; text-align: center}
 
 .title h1 {font-size: 60px;font-family: 'source sans pro', sans-serif; font-weight: 700;}
 .title h2 {font-size: 30px;font-family: '맑은 고딕'; font-weight: 500;}
@@ -53,7 +53,7 @@ article { position:relative;
 .business h1 {font-size: 40px;font-family: 'source sans pro', sans-serif; font-weight: 700;}
 .business h2 {font-size: 40px;font-family: '굴림'; font-weight: 500;}
 .business h3 {font-size: 30px;font-family: 'source sans pro', sans-serif; font-weight: 500;}
-.business p {font-size: 17px; text-align: center}
+.business p {font-size: 17px; text-align: left}
 #subtitle {font-size: 31px; font-family: '맑은 고딕'; font-weight: bolder;}
 #subtitle1 {font-size: 31px; font-family: '맑은 고딕'; font-weight: bolder;}
 /* ==================================================
