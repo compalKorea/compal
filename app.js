@@ -23,7 +23,7 @@ app.use(bodyParser());
 app.use(methodOverride());
 
 app.all("/", function(req, res){
-    res.redirect('/html/index.html');
+    res.redirect('/html/coming_soon.html');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
