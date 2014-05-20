@@ -17,6 +17,16 @@ body {font-weight:normal;font-Family:"맑은 고딕", "Malgun Gothic", "나눔�
 }
 
 /* ==================================================
+   Main img Styles
+================================================== */
+.scroll img {
+    position:fixed; display: block; top: 740px; left: 88.5%;
+    z-index: 1; width: 71px; height: 51px; ;
+}
+body {  background-image:url("../img/line.jpg") ;}
+article { position:relative;
+}
+/* ==================================================
    Title Styles
 ================================================== */
 .title{ padding-bottom: 4%; }
@@ -37,7 +47,7 @@ body {font-weight:normal;font-Family:"맑은 고딕", "Malgun Gothic", "나눔�
 ================================================== */
 .business {margin-left: 3%; text-align: center}
 .moroGray {margin-left: 5%; background-color: #e0e0e0;margin-top:1px; text-align: center;}
-.littleGray {margin-left: 5%; background-color: #eaeaea;margin-top:1px; text-align: center;}
+.littleGray {margin-left: 5%; background-color: #efefef;margin-top:1px; text-align: center;}
 
 .business img {margin-left: auto;margin-right: auto; margin-top: 3%}
 .business h1 {font-size: 40px;font-family: 'source sans pro', sans-serif; font-weight: 700;}
@@ -208,7 +218,7 @@ nav#menu #menu-nav li a:hover {
 #navigation-mobile {
     display: none;
     text-align: center;
-    width: 100%;
+    width: 107%;
     background: #26292E;
     border-bottom: 1px solid #2F3238;
     position: relative;
