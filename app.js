@@ -22,6 +22,10 @@ app.use(router);
 app.use(bodyParser());
 app.use(methodOverride());
 
+app.all("/", function(req, res){
+    res.redirect('/html/index.html');
+});
+
 http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
