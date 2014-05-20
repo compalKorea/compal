@@ -1,0 +1,10 @@
+﻿body
+{
+    width:100%;
+    overflow:hidden;
+    background-image: url("../img/comingbg.jpg");
+}
+#img{
+  padding-top:17%;   padding-left:40% ;
+  width: 70%; height:70%;
+}
