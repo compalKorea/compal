@@ -29,7 +29,7 @@ article { position:relative;
 /* ==================================================
    Title Styles
 ================================================== */
-.title{ padding-bottom: 4%; }
+.title{ padding-bottom: 4%; text-align: center}
 
 .title h1 {font-size: 60px;font-family: 'source sans pro', sans-serif; font-weight: 700;}
 .title h2 {font-size: 30px;font-family: '맑은 고딕'; font-weight: 500;}
