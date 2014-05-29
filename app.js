@@ -11,7 +11,7 @@ var app = express();
 var router = express.Router();
 
 // all environments
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 8001);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(morgan()); // logger
@@ -23,7 +23,7 @@ app.use(bodyParser());
 app.use(methodOverride());
 
 app.all("/", function(req, res){
-    res.redirect('/html/coming_soon.html');
+    res.redirect('/html/index.html');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
