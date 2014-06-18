@@ -491,7 +491,8 @@ var symbols = {
                 ["style", "height", '100.35%'],
                 ["style", "opacity", '0'],
                 ["style", "left", '0px'],
-                ["style", "width", '100%']
+                ["style", "width", '100%'],
+                ["style", "display", "none"]
             ],
             "${_bomb}": [
                 ["style", "top", '44.16%'],

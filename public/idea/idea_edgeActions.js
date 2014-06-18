@@ -28,41 +28,55 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
         // sym.play('MoveUp_Stage_bomb');
       if (howMove(sym, 'Stage_bomb', false)) {
           $(sym.lookupSelector("give")).css('background-image', 'url(images/qe.png)');
-          $("#Stage_boom_bg").addClass('displayNon');
+          $("#Stage_boom_bg").show();
       }
       else {
           $(sym.lookupSelector("give")).css('background-image', 'url(images/qe.png)')
-          $("#Stage_boom_bg").removeClass('displayNon');
+          /*$("#Stage_boom_bg").hide();*/
       }
       });
          //Edge binding end
-
 
 
       
 
    Symbol.bindElementAction(compId, symbolName, "${_give}", "mouseout", function(sym, e) {
          $(sym.lookupSelector("give")).css('background-image','url(images/give-up.png)');
-         howMove(sym, 'Stage_bomb', true);
+         /*howMove(sym, 'Stage_bomb', true);*/
       });
          //Edge binding end
 
-Symbol.bindElementAction(compId, symbolName, "${_challenge}", "click", function(sym, e) {
-         // Play the timeline at a label or specific time. For example:
-    // sym.play(500); or sym.play("myLabel");
-    if (howMove(sym, 'Stage_container', false)){
-        $(sym.lookupSelector("challenge")).css('background-image', 'url(images/ae.png)');
-        $("#Stage_contents2").addClass('displayNon');
-    }
-    else {
-        $(sym.lookupSelector("challenge")).css('background-image', 'url(images/challenge.png)');
-        $("#Stage_contents2").removeClass('displayNon');
-    }
+    Symbol.bindElementAction(compId, symbolName, "${_challenge}", "click", function(sym, e) {
+             // Play the timeline at a label or specific time. For example:
+        // sym.play(500); or sym.play("myLabel");
+        if (howMove(sym, 'Stage_container', false)){
+            $(sym.lookupSelector("challenge")).css('background-image', 'url(images/ae.png)');
+            $("#Stage_contents2").addClass('displayNon');
+        }
+        else {
+            $(sym.lookupSelector("challenge")).css('background-image', 'url(images/challenge.png)');
+            $("#Stage_contents2").removeClass('displayNon');
+        }
 
-    sym.$("container").css({"position":"absolute","left":"68.8%","height":"%"});
-    sym.$("info").html("Fullname:<br/><input type='text' class='form-control' placeholder='Username *' style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/> <br/><br/> E-mail:<br/> <input type='text' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/> <br/> <br/> Attachment:<br/><input type='file' name='upload' value='search' class='files' style='width: 80%; bgcolor:white; height:6%; margin-right: auto; margin-left: auto;'/> </br><br/>Message:<br/><textarea class='form-control' placeholder='' style='width: 80%; height:30%; overflow:auto; display:scoll; margin-right: auto;margin-left: auto;'></textarea><br/><div style='width: 80%; text-align:center; padding-top: 4%;'><button class='button blue' id='submit1' onclick='submit()'>submit</button></div>")
+        sym.$("container").css({"position":"absolute","left":"68.8%","height":"%"});
+        var html = " <div> " +
+            "     <br/> " +
+            "     <input type='text' ng-model='form.name' class='form-control' placeholder='Username *' style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/> " +
+        "     <br/><br/> " +
+        "     E-mail:<br/> " +
+        "     <input type='email' ng-model='form.email' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/> " +
+        "     <br/> <br/> " +
+        "     Attachment:<br/> " +
+        "     <input type='file' onclick='this.value=null'' name='upload' value='search' class='files' style='width: 80%; bgcolor:white; height:6%; margin-right: auto; margin-left: auto;'/> " +
+        "     </br><br/>Message:<br/> " +
+        "     <textarea class='form-control' ng-model='form.content' placeholder='' " +
+        "        style='width: 80%; height:30%; overflow:auto; display:scoll; margin-right: auto;margin-left: auto;' ng-auto-expand my-data='form.content'></textarea> " +
+        "     <br/> " +
+        "     <div style='width: 80%; text-align:center; padding-top: 4%;'><button class='button blue' id='submit1' ng-click='submit()'>submit</button></div> " +
+        " </div> ";
+        sym.$("info").html("Fullname:"+html);
 
-});
+    });
       //Edge binding end
 
       
