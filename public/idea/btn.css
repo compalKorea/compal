@@ -1,0 +1,23 @@
+﻿/* media all */
+.blue.button
+{
+    background-color:#E5B322;
+}
+.button 
+{
+    padding-top:30%;
+    display:inline-block;
+    padding: 1em 1.5em 0.75em;
+    border: none;
+    color: #fff !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color:#47B322;
+}
+
+.auto            { cursor: auto; }
+
+.displayNon {display: none;}
