@@ -28,6 +28,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
         // sym.play('MoveUp_Stage_bomb');
       if (howMove(sym, 'Stage_bomb', false)) {
           $(sym.lookupSelector("give")).css('background-image', 'url(images/qe.png)');
+          $("#Stage_closed").show();
           $("#Stage_boom_bg").show();
       }
       else {
@@ -57,20 +58,20 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
             $(sym.lookupSelector("challenge")).css('background-image', 'url(images/challenge.png)');
             $("#Stage_contents2").removeClass('displayNon');
         }
-
+        
         sym.$("container").css({"position":"absolute","left":"68.8%","height":"%"});
         var html = " <div> " +
             "     <br/> " +
-            "     <input type='text' ng-model='form.name' class='form-control' placeholder='Username *' style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/> " +
+            "     <input type='text' ng-model='form.name' class='form-control' placeholder='Username *' style='width: 80%; height:6%; padding-top:2%; padding-bottom:2%; margin-right: auto;margin-left: auto;'/> " +
         "     <br/><br/> " +
         "     E-mail:<br/> " +
-        "     <input type='email' ng-model='form.email' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/> " +
+        "     <input type='email' ng-model='form.email' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; height:6%; padding-top:2%; padding-bottom:2%; margin-right: auto;margin-left: auto;'/> " +
         "     <br/> <br/> " +
         "     Attachment:<br/> " +
-        "     <input type='file' onclick='this.value=null'' name='upload' value='search' class='files' style='width: 80%; bgcolor:white; height:6%; margin-right: auto; margin-left: auto;'/> " +
+        "     <input type='file' onclick='this.value=null'' name='upload' value='search' class='files' style='width: 80%; bgcolor:white; padding-top:2%; padding-bottom:2%; height:6%; margin-right: auto; margin-left: auto;'/> " +
         "     </br><br/>Message:<br/> " +
         "     <textarea class='form-control' ng-model='form.content' placeholder='' " +
-        "        style='width: 80%; height:30%; overflow:auto; display:scoll; margin-right: auto;margin-left: auto;' ng-auto-expand my-data='form.content'></textarea> " +
+        "        style='width: 80%; height: 30%; padding-bottom: 30%; overflow:auto; display:scoll; margin-right: auto;margin-left: auto;' ng-auto-expand my-data='form.content'></textarea> " +
         "     <br/> " +
         "     <div style='width: 80%; text-align:center; padding-top: 4%;'><button class='button blue' id='submit1' ng-click='submit()'>submit</button></div> " +
         " </div> ";
@@ -345,6 +346,26 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 17191, function(sym, e) {
          sym.stop();
+
+      });
+      //Edge binding end
+
+      
+
+      Symbol.bindElementAction(compId, symbolName, "${_closed}", "click", function(sym, e) {
+         // Play the timeline at a label or specific time. For example:
+         // sym.play(500); or sym.play("myLabel");
+          //sym.play('start');
+          if (howMove(sym, 'Stage_bomb', false)) {
+              $(sym.lookupSelector("give")).css('background-image', 'url(images/qe.png)');
+              $("#Stage_boom_bg").hide();
+          }
+          else {
+              $("#Stage_closed").hide();
+              $("#Stage_boom_bg").hide();
+              /*$("#Stage_boom_bg").hide();*/
+          }
+         
 
       });
       //Edge binding end
