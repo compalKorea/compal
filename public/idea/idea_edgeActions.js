@@ -67,7 +67,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
         "     <input type='email' ng-model='form.email' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; position: absolute; height:5%;  margin-right: auto;margin-left: auto;'/> " +
         "     <br/> <br/> " +
         "     Attachment:<br/> " +
-        "     <input type='file' onclick='this.value=null'' name='upload' value='search' class='files' style='width: 80%; position: absolute; height:6%; margin-right: auto; margin-left: auto;'/>"+
+        "     <input type=file name='file1' style='display: none;'><input type='text' name='file2' id='file2' margin-right: auto;margin-left: auto; style='position: absolute; width:58%; height:5%;'><img src='./images/btn1.jpg' border='0' onclick='document.all.file1.click(); document.all.file2.value=document.all.file1.value;' style='position: absolute; margin-left: 59%; cursor:pointer; width:22%; height:6%;' />"+
         "     </br><br/>Message:<br/> " +
         "     <textarea class='form-control' ng-model='form.content' placeholder='' " +
         "        style='width: 80%; height: 30%; position: absolute; overflow:auto; display:scoll; margin-right: auto; margin-left: auto;' ng-auto-expand my-data='form.content'></textarea> " +
