@@ -28,7 +28,6 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
         // sym.play('MoveUp_Stage_bomb');
       if (howMove(sym, 'Stage_bomb', false)) {
           $(sym.lookupSelector("give")).css('background-image', 'url(images/qe.png)');
-          $("#Stage_closed").show();
           $("#Stage_boom_bg").show();
       }
       else {
@@ -58,8 +57,9 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
             $(sym.lookupSelector("challenge")).css('background-image', 'url(images/challenge.png)');
             $("#Stage_contents2").removeClass('displayNon');
         }
-        
+
         sym.$("container").css({"position":"absolute","left":"68.8%","height":"%"});
+<<<<<<< .mine
         var html = " <div> " +
             "     <input type='text' ng-model='form.name' class='form-control' placeholder='Username *' style='width: 80%; height:5%; position: absolute; margin-right: auto;margin-left: auto;'/> " +
         "     <br/><br/> " +
@@ -75,6 +75,23 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
         "     <div style='width: 80%; text-align:center; position: absolute; padding-top:35%;'><button class='button blue' id='submit1' ng-click='submit()'>Submit</button></div> " +
         " </div> ";
         sym.$("info").html("Fullname:"+html);
+=======
+        sym.$("info").html('<iframe src="sendIdea.html" frameborder="0" scorlling="no" style="width: 100%; height: 100%"></iframe>');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
 
     });
       //Edge binding end
@@ -345,26 +362,6 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 17191, function(sym, e) {
          sym.stop();
-
-      });
-      //Edge binding end
-
-      
-
-      Symbol.bindElementAction(compId, symbolName, "${_closed}", "click", function(sym, e) {
-         // Play the timeline at a label or specific time. For example:
-         // sym.play(500); or sym.play("myLabel");
-          //sym.play('start');
-          if (howMove(sym, 'Stage_bomb', false)) {
-              $(sym.lookupSelector("give")).css('background-image', 'url(images/qe.png)');
-              $("#Stage_boom_bg").hide();
-          }
-          else {
-              $("#Stage_closed").hide();
-              $("#Stage_boom_bg").hide();
-              /*$("#Stage_boom_bg").hide();*/
-          }
-         
 
       });
       //Edge binding end
