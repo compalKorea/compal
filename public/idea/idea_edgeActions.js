@@ -61,19 +61,18 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
         
         sym.$("container").css({"position":"absolute","left":"68.8%","height":"%"});
         var html = " <div> " +
-            "     <br/> " +
-            "     <input type='text' ng-model='form.name' class='form-control' placeholder='Username *' style='width: 80%; height:6%; padding-top:2%; padding-bottom:2%; margin-right: auto;margin-left: auto;'/> " +
+            "     <input type='text' ng-model='form.name' class='form-control' placeholder='Username *' style='width: 80%; height:5%; position: absolute; margin-right: auto;margin-left: auto;'/> " +
         "     <br/><br/> " +
         "     E-mail:<br/> " +
-        "     <input type='email' ng-model='form.email' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; height:6%; padding-top:2%; padding-bottom:2%; margin-right: auto;margin-left: auto;'/> " +
+        "     <input type='email' ng-model='form.email' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; position: absolute; height:5%;  margin-right: auto;margin-left: auto;'/> " +
         "     <br/> <br/> " +
         "     Attachment:<br/> " +
-        "     <input type='file' onclick='this.value=null'' name='upload' value='search' class='files' style='width: 80%; bgcolor:white; padding-top:2%; padding-bottom:2%; height:6%; margin-right: auto; margin-left: auto;'/> " +
+        "     <input type='file' onclick='this.value=null'' name='upload' value='search' class='files' style='width: 80%; position: absolute; height:6%; margin-right: auto; margin-left: auto;'/>"+
         "     </br><br/>Message:<br/> " +
         "     <textarea class='form-control' ng-model='form.content' placeholder='' " +
-        "        style='width: 80%; height: 30%; padding-bottom: 30%; overflow:auto; display:scoll; margin-right: auto;margin-left: auto;' ng-auto-expand my-data='form.content'></textarea> " +
-        "     <br/> " +
-        "     <div style='width: 80%; text-align:center; padding-top: 4%;'><button class='button blue' id='submit1' ng-click='submit()'>submit</button></div> " +
+        "        style='width: 80%; height: 30%; position: absolute; overflow:auto; display:scoll; margin-right: auto; margin-left: auto;' ng-auto-expand my-data='form.content'></textarea> " +
+        "     <br/><br/>" +
+        "     <div style='width: 80%; text-align:center; position: absolute; padding-top:35%;'><button class='button blue' id='submit1' ng-click='submit()'>Submit</button></div> " +
         " </div> ";
         sym.$("info").html("Fullname:"+html);
 
