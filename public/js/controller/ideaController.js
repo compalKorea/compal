@@ -87,3 +87,7 @@ angular.module("ideaHome",  [ 'angularFileUpload' ])
             }
         };
     }]);
+
+function submit1(){
+    alert("aaaa");
+}
