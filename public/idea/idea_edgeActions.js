@@ -59,7 +59,22 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
         }
 
         sym.$("container").css({"position":"absolute","left":"68.8%","height":"%"});
-        sym.$("info").html('<iframe src="sendIdea.html" frameborder="0" scorlling="no" style="width: 100%; height: 100%"></iframe>');
+        var html = " <div> " +
+            "     <br/> " +
+            "     <input type='text' ng-model='form.name' class='form-control' placeholder='Username *' style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/> " +
+        "     <br/><br/> " +
+        "     E-mail:<br/> " +
+        "     <input type='email' ng-model='form.email' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/> " +
+        "     <br/> <br/> " +
+        "     Attachment:<br/> " +
+        "     <input type='file' onclick='this.value=null'' name='upload' value='search' class='files' style='width: 80%; bgcolor:white; height:6%; margin-right: auto; margin-left: auto;'/> " +
+        "     </br><br/>Message:<br/> " +
+        "     <textarea class='form-control' ng-model='form.content' placeholder='' " +
+        "        style='width: 80%; height:30%; overflow:auto; display:scoll; margin-right: auto;margin-left: auto;' ng-auto-expand my-data='form.content'></textarea> " +
+        "     <br/> " +
+        "     <div style='width: 80%; text-align:center; padding-top: 4%;'><button class='button blue' id='submit1' ng-click='submit()'>submit</button></div> " +
+        " </div> ";
+        sym.$("info").html("Fullname:"+html);
 
     });
       //Edge binding end
