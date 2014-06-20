@@ -58,40 +58,7 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
             $("#Stage_contents2").removeClass('displayNon');
         }
 
-        sym.$("container").css({"position":"absolute","left":"68.8%","height":"%"});
-<<<<<<< .mine
-        var html = " <div> " +
-            "     <input type='text' ng-model='form.name' class='form-control' placeholder='Username *' style='width: 80%; height:5%; position: absolute; margin-right: auto;margin-left: auto;'/> " +
-        "     <br/><br/> " +
-        "     E-mail:<br/> " +
-        "     <input type='email' ng-model='form.email' class='form-control' placeholder='your mail@gmail.com' style='width: 80%; position: absolute; height:5%;  margin-right: auto;margin-left: auto;'/> " +
-        "     <br/> <br/> " +
-        "     Attachment:<br/> " +
-        "     <input type=file name='file1' style='display: none;'><input type='text' name='file2' id='file2' margin-right: auto;margin-left: auto; style='position: absolute; width:58%; height:5%;'><img src='./images/btn1.jpg' border='0' onclick='document.all.file1.click(); document.all.file2.value=document.all.file1.value;' style='position: absolute; margin-left: 59%; cursor:pointer; width:22%; height:6%;' />"+
-        "     </br><br/>Message:<br/> " +
-        "     <textarea class='form-control' ng-model='form.content' placeholder='' " +
-        "        style='width: 80%; height: 30%; position: absolute; overflow:auto; display:scoll; margin-right: auto; margin-left: auto;' ng-auto-expand my-data='form.content'></textarea> " +
-        "     <br/><br/>" +
-        "     <div style='width: 80%; text-align:center; position: absolute; padding-top:35%;'><button class='button blue' id='submit1' ng-click='submit()'>Submit</button></div> " +
-        " </div> ";
-        sym.$("info").html("Fullname:"+html);
-=======
         sym.$("info").html('<iframe src="sendIdea.html" frameborder="0" scorlling="no" style="width: 100%; height: 100%"></iframe>');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> .theirs
 
     });
       //Edge binding end
@@ -362,6 +329,21 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
 
       Symbol.bindTriggerAction(compId, symbolName, "Default Timeline", 17191, function(sym, e) {
          sym.stop();
+
+      });
+      //Edge binding end
+
+      Symbol.bindElementAction(compId, symbolName, "${_closed}", "click", function(sym, e) {
+         // insert code for mouse click here
+         if (howMove(sym, 'Stage_bomb', false)) {
+                       $(sym.lookupSelector("give")).css('background-image', 'url(images/qe.png)');
+                       $("#Stage_boom_bg").hide();
+                   }
+                   else {
+                       $("#Stage_closed").hide();
+                       $("#Stage_boom_bg").hide();
+                       /*$("#Stage_boom_bg").hide();*/
+                   }
 
       });
       //Edge binding end

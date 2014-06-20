@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html style="height:100%;" ng-app="ideaHome">
 <head>
@@ -8,7 +8,7 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
     <meta name="apple-mobile-web-app-status-bar-style" content="yes" />
     <!--button css-->
-    <link type="text/css" rel="stylesheet" href="/idea/btn.css" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" />
     <script src="/js/lib/angular/file/angular-file-upload-shim.js"></script>
     <script src="/js/lib/jquery-1.11.1.min.js"></script>
     <script src="/js/lib/angular/angular.min.js"></script>
@@ -20,14 +20,21 @@
 <div style="height: 100%">
     <form name="myForm" >
         <div style="font-weight: bold; color: #ffffff">Name :</div>
-        <input type='text' ng-model="form.name" name="input" class='form-control' placeholder='Username *' required style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/>
+        <input type='text' ng-model='form.name' name="input" class='form-control' placeholder='Username *' style='width: 80%; height:5%;  margin-right: auto;margin-left: auto;' />
         <div style="font-weight: bold; color: #ffffff; padding-top: 2%;">E-mail :</div>
-        <input type='email' ng-model="form.email" name="input" class='form-control' placeholder='your mail@gmail.com' required style='width: 80%; height:6%; margin-right: auto;margin-left: auto;'/>
+        <input type='email' ng-model='form.email' name="input" class='form-control' placeholder='your mail@gmail.com' style='width: 80%;  height:5%;  margin-right: auto;margin-left: auto;' />
         <div style="font-weight: bold; color: #ffffff; padding-top: 2%;">Attachment: :</div>
-        <input type='file' ng-file-select="onFileSelect($files)" onclick="this.value=null" name='upload' class='files' style='width: 80%; bgcolor:white; height:6%; margin-right: auto; margin-left: auto;'/>
+        <input type=file name='file1' style='display: none;' ng-file-select="onFileSelect($files)" onclick="this.value=null">
+        <span class="col-md-8">
+            <input type='text' name='file2' id='file2' style='height: 6%;' />
+        </span>
+        <span class="col-md-4">
+            <button class="btn btn-lg btn-warning" onclick='document.all.file1.click(); document.all.file2.value=document.all.file1.value;'>Search</button>
+        </span>        
         <div style="font-weight: bold; color: #ffffff; padding-top: 2%;">Message: :</div>
+
         <textarea class='form-control' name="input" ng-model="form.content" placeholder=''
-                  style='width: 80%;' ng-auto-expand my-data="form.content" required></textarea>
+                  style='width: 80%; height: 30%; overflow:auto; margin-right: auto; margin-left: auto;' ng-auto-expand required></textarea>
         <br/>
         <div style='width: 80%; text-align:center; padding-top: 4%;'><button class='button blue' id='submit1' ng-click='sendIdea()'>submit</button></div>
     </form>
