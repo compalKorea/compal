@@ -82,7 +82,7 @@ app.post('/sendIdea', function(req, res){
 });
 
 app.get("/", function(req, res){
-    res.redirect('/idea/idea.html');
+    res.redirect('/html/coming_soon.html');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
