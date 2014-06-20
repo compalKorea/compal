@@ -44,7 +44,7 @@ function sendIdea(){
         dataType : 'json',
         success : function(data){
             console.log(data);
-            if(data.err){
+            if(data){
                 alert(data.err);
                 return;
             }
