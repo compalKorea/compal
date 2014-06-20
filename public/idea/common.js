@@ -31,7 +31,15 @@ function submitImg(symId, imgFilePath) {
 }
 
 function sendIdea(){
-    if(!($('#myForm').val() == null || $('#myForm').val() == undefined || $('#myForm').val() == '')){
+    if($('#name').val() == null || $('#name').val() == undefined || $('#name').val() == '')
+        return;
+
+    if($('#email').val() == null || $('#email').val() == undefined || $('#email').val() == '')
+        return;
+    if($('#content').val() == null || $('#content').val() == undefined || $('#content').val() == '')
+        return;
+
+    if(!($('#myFile').val() == null || $('#myFile').val() == undefined || $('#myFile').val() == '')){
         var size = document.getElementById('myFile').files[0].size/1024/1024;
 
         if(size > 3){
