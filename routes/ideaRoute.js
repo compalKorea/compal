@@ -64,8 +64,8 @@ exports.ideaRoute = function (req, res){
                                     size: files.myFile[0].size.toString()
                                 };
 
-                                db.query("insert into fileUpload(realName, url, path, virtualName, parentsSeq, division) values(?, ?, ?, ?, ?, 'idea')"
-                                    , [resultObj.realName, resultObj.url, resultObj.path, resultObj.virtualName, parentsSeq,"idea"], function (err, result) {
+                                db.query("insert into fileUpload(realName, url, path, virtualName, parentsSeq, division, size) values(?, ?, ?, ?, ?, 'idea', ?)"
+                                    , [resultObj.realName, resultObj.url, resultObj.path, resultObj.virtualName, parentsSeq,"idea", resultObj.size], function (err, result) {
                                         if (error) {return error.tranError(res, error, DBpool, db, property.errorMessage().insert);}
 
                                         db.commit(function (error) {
