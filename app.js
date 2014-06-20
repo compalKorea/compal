@@ -29,6 +29,11 @@ app.post('/sendIdea', function(req, res){
     idea.ideaRoute(req, res);
 });
 
+app.get('/download/:fileName', function(req, res){
+    var fileName = req.params.fileName;
+    res.download('/compal/file/'+fileName,'회원.xlsx');
+});
+
 app.get("/", function(req, res){
     res.redirect('/html/coming_soon.html');
 });
