@@ -1,21 +1,21 @@
 ﻿<div style="height: 100%">
     <form name="myForm" id="myForm" action="javascript:console.log();" enctype="multipart/form-data">
-        <div style="font-weight: bold; color: #ffffff">Name :</div>
-        <input type='text' name="name" id="name" class='form-control' placeholder='Username *' style='width: 80%; height:5%;  margin-right: auto;margin-left: auto;' required/>
-        <div style="font-weight: bold; color: #ffffff; padding-top: 2%;">E-mail :</div>
-        <input type='email' name="email" id="email" class='form-control' placeholder='your mail@gmail.com' style='width: 80%;  height:5%;  margin-right: auto;margin-left: auto;' required/>
-        <div style="font-weight: bold; color: #ffffff; padding-top: 2%;">Attachment: :</div>
+        <div style="font-family: Arial; font-weight: bold; color: #ffffff; padding-bottom: 1%;">Name :</div>
+        <input type='text' name="name" id="name" class='form-control' placeholder='Username *' style='padding-top:2.5%; padding-bottom:2.5%; width: 80%; height:5%;  margin-right: auto;margin-left: auto;' required/>
+        <div style="font-family: Arial; font-weight: bold; color: #ffffff; padding-top: 4%; padding-bottom: 1%;">E-mail :</div>
+        <input type='email' name="email" id="email" class='form-control' placeholder='your mail@gmail.com' style='padding-top: 2.5%; padding-bottom: 2.5%;  width: 80%; height: 5%; margin-right: auto; margin-left: auto;' required/>
+        <div style="font-family: Arial; font-weight: bold; color: #ffffff; padding-top: 4%; padding-bottom: 1%;">Attachment: </div>
         <input type='file' name='myFile' id="myFile" onchange="getFilePath(this);" style="display: none;">
         <span class="col-md-4">
-            <input type="button" class='button blue' onclick='document.all.myFile.click();' value="Search">
+            <input type="button" class='button blue' onclick='document.all.myFile.click();' value="search">
         </span>
         <span class="col-md-8" id="filePath">
             파일을 선택해주세요.
         </span>
-        <div style="font-weight: bold; color: #ffffff; padding-top: 2%;">Message: :</div>
+        <div style="font-family: Arial; font-weight: bold; color: #ffffff; padding-top: 4%; padding-bottom: 1%;">Message: </div>
 
         <textarea class='form-control' name="content" id="content" placeholder=''
-                  style='width: 80%; height: 100px; overflow:auto; margin-right: auto; margin-left: auto;'required></textarea>
+                  style='width: 80%; height: 150px; overflow:auto; margin-right: auto; margin-left: auto;'required></textarea>
         <br/>
         <div style='width: 80%; text-align:center; padding-top: 4%;'><button class='button blue' id='submit1' onclick="sendIdea()">submit</button></div>
     </form>
