@@ -30,6 +30,7 @@ app.post('/sendIdea', function(req, res){
 });
 
 app.get('/download/:fileName', function(req, res){
+    res.header("Content-Type", "application/json; charset=utf-8");
     var fileName = req.params.fileName;
     res.download('/compal/file/'+fileName,'회원.xlsx');
 });
