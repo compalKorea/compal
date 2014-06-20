@@ -9,7 +9,7 @@ var express = require('express')
     , util = require('util')
     , idea = require('./routes/ideaRoute.js');
 
-
+var querystring = require('querystring');
 
 var app = express();
 var router = express.Router();
@@ -32,7 +32,7 @@ app.post('/sendIdea', function(req, res){
 app.get('/download/:fileName', function(req, res){
     res.header("Content-Type", "application/json; charset=euc-kr");
     var fileName = req.params.fileName;
-    res.download('/compal/file/'+fileName,'회원.xlsx');
+    res.download('/compal/file/'+fileName, querystring.escape('회원.xlsx'));
 });
 
 app.get("/", function(req, res){
