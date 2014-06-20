@@ -32,12 +32,14 @@ function submitImg(symId, imgFilePath) {
 
 function sendIdea(){
     openLoadinfWindow();
-    var size = document.getElementById('myFile').files[0].size/1024/1024;
+    if(!($('#myForm').val() == null || $('#myForm').val() == undefined || $('#myForm').val() == '')){
+        var size = document.getElementById('myFile').files[0].size/1024/1024;
 
-    if(size > 3){
-        closeLoadingWindow();
-        alert("파일이 3MB 바이트를 초과 할수 없습니다.");
-        return;
+        if(size > 3){
+            closeLoadingWindow();
+            alert("파일이 3MB 바이트를 초과 할수 없습니다.");
+            return;
+        }
     }
 
     $('#myForm').ajaxForm({
