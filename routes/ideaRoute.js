@@ -17,7 +17,7 @@ var property  = require('../util/property.js');
  */
 exports.ideaRoute = function (req, res){
     var form = new multiparty.Form();
-    form.uploadDir = "./public/upload";
+    form.uploadDir = "/compal/file";
     form.maxFilesSize   = 1048576 * 3;
 
     form.parse(req, function(err, fields, files) {
