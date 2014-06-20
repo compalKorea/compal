@@ -16,11 +16,14 @@ var property  = require('../util/property.js');
  * @param param
  */
 exports.ideaRoute = function (req, res){
-
     var form = new multiparty.Form();
     form.uploadDir = "./public/upload";
+    form.maxFilesSize   = 1048576 * 3;
 
     form.parse(req, function(err, fields, files) {
+        if(err){
+            res.send({err : err.message}); return;
+        }
         res.set('Content-Type', 'text/html');
 
         if('' == fields.content || null == fields.content){ res.send({err : 'Please check the content.'}); return; }
@@ -72,9 +75,7 @@ exports.ideaRoute = function (req, res){
                                         res.end(util.inspect({fields: fields, files: files}));
                                     });
                             }
-
-                            console.log(fields.content);
-                            email.sendMail('mayajuni10@gmail.com', '[idea 공모] ' + title, fields.content);
+                            email.sendMail('mayajuni10@gmail.com', '[idea 공모] ' + title, fields.content.toString());
                         });
                 } finally {
                     DBpool.release(db);

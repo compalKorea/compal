@@ -58,7 +58,8 @@ var Composition = Edge.Composition, Symbol = Edge.Symbol; // aliases for commonl
             $("#Stage_contents2").removeClass('displayNon');
         }
 
-        sym.$("info").html('<iframe src="sendIdea.html" frameborder="0" scorlling="no" style="width: 100%; height: 100%"></iframe>');
+        $.ajaxSetup({cache:false});
+        sym.$("info").load('sendIdea.html');
 
     });
       //Edge binding end

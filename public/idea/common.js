@@ -29,3 +29,33 @@ function submitImg(symId, imgFilePath) {
     else
         symId.css('background-image', 'url('+imgFilePath+')');
 }
+
+function sendIdea(){
+    var size = document.getElementById('myFile').files[0].size/1024/1024;
+
+    if(size > 3){
+        alert("파일이 3MB 바이트를 초과 할수 없습니다.");
+        return;
+    }
+
+    $('#myForm').ajaxForm({
+        url : "/sendIdea",
+        type : "post",
+        dataType : 'json',
+        success : function(data){
+            console.log(data);
+            if(data.err){
+                alert(data.err);
+                return;
+            }
+            alert("등록 되었습니다.!");
+        }
+    });
+}
+
+function getFilePath(obj){
+    if(obj.value == '')
+        $("#filePath").html("파일을 선택해주세요.");
+    else
+        $("#filePath").html(obj.value);
+}

@@ -5,7 +5,14 @@
  * Created by Administrator on 2014-06-02.
  */
 angular.module("ideaHome",  [ 'angularFileUpload' ])
-    .controller('ideaController', ['$scope', '$http', '$timeout', '$upload',  function($scope, $http, $timeout, $upload){
+    .controller('ideaController', ['$scope', '$http', '$timeout', '$upload', '$timeout', function($scope, $http, $timeout, $upload, $timeout){
+        console.log("aaaa");
+        $timeout(function() {
+            console.log($("#Stage_container").attr('class'));
+            $.ajaxSetup({cache:false});
+            $("#Stage_info").load('sendIdea.html');
+        }, 0);
+
         $scope.form = {};
         $scope.selectedFiles = [];
 
@@ -14,6 +21,7 @@ angular.module("ideaHome",  [ 'angularFileUpload' ])
         };
 
         $scope.sendIdea = function(){
+            console.log("aaaaa");
             if($scope.myForm.input.$error.required)
                 return;
             else if($scope.myForm.$error.email)
