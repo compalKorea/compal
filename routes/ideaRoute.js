@@ -58,8 +58,8 @@ exports.ideaRoute = function (req, res){
                                     result: 'ok',
                                     realName: files.myFile[0].originalFilename.toString(),
                                     path: files.myFile[0].path.toString(),
-                                    url: "/upload/" + files.myFile[0].path.toString().split('/')[4],
-                                    virtualName: files.myFile[0].path.toString().split('/')[4],
+                                    url: "/upload/" + files.myFile[0].path.toString().split('/')[5],
+                                    virtualName: files.myFile[0].path.toString().split('/')[5],
                                     originalFilename: files.myFile[0].originalFilename.toString(),
                                     size: files.myFile[0].size.toString()
                                 };
