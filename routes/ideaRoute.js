@@ -17,7 +17,7 @@ var property  = require('../util/property.js');
  */
 exports.ideaRoute = function (req, res){
     var form = new multiparty.Form();
-    form.uploadDir = "/compal/file";
+    form.uploadDir = "/compal/mIntreanet/public/upload";
     form.maxFilesSize   = 1048576 * 3;
 
     form.parse(req, function(err, fields, files) {
@@ -58,8 +58,8 @@ exports.ideaRoute = function (req, res){
                                     result: 'ok',
                                     realName: files.myFile[0].originalFilename.toString(),
                                     path: files.myFile[0].path.toString(),
-                                    url: "/upload/" + files.myFile[0].path.toString().split('/')[2],
-                                    virtualName: files.myFile[0].path.toString().split('/')[2],
+                                    url: "/upload/" + files.myFile[0].path.toString().split('/')[4],
+                                    virtualName: files.myFile[0].path.toString().split('/')[4],
                                     originalFilename: files.myFile[0].originalFilename.toString(),
                                     size: files.myFile[0].size.toString()
                                 };
