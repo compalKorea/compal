@@ -52,8 +52,8 @@
                 <li><a href="#menu1">Introduce</a></li>
                 <!--<li><a href="#menu2">Corporateidentity</a></li>-->
                 <li><a href="#menu3">Business</a></li>
-                <li><a href="#menu4">Recruitment</a></li>
-                <!--<li><a href="#menu5">CONTACT US</a></li>-->
+                <!--<li><a href="#menu4">Recruitment</a></li>-->
+                <li><a href="#menu5">CONTACT US</a></li>
             </ul>
         </nav>
     </div>
@@ -209,16 +209,16 @@
                     </span>
             </div>
         </div>
-    </div>
+    </div><!--
     <div class="carousel" style="padding-top: 5%;">
         <div class="carousel-inner">
             <div class="item active">
                 <img src="../img/picto_17.jpg" alt="First slide">
-                <!--<div class="container" >
+                &lt;!&ndash;<div class="container" >
                     <div style="position : absolute;left:30%; top : 43%; color: #ffffff;text-align: center;" >
                         <span style="font-size: 60px;">We are dominate the <span style="color: orange">passion.</span></span>
                     </div>
-                </div>-->
+                </div>&ndash;&gt;
             </div>
         </div>
     </div>
@@ -252,16 +252,16 @@
 
 
         </div>
-    </div>
-    <!--<div class="carousel" style="padding-top: 70px;">
+    </div>-->
+    <div class="carousel" style="padding-top: 70px;">
         <div class="carousel-inner">
             <div class="item active">
                 <img src="../img/main_07.jpg" alt="First slide">
-                &lt;!&ndash;<div class="container" >
+                <!--<div class="container" >
                     <div style="position : absolute;left:30%; top : 43%; color: #ffffff;text-align: center;" >
                         <span style="font-size: 60px;">Try it challenge towards a <span style="color: orange">dream.</span></span>
                     </div>
-                </div>&ndash;&gt;
+                </div>-->
             </div>
         </div>
     </div>
@@ -272,13 +272,13 @@
                 <h3>Meet Our Team</h3>
             </div>
             <div class="input-group-lg">
-                <textarea style="width: 90%; height: 400px; margin-right: auto;margin-left: auto" class="form-control" placeholder="For any request please email us at message"></textarea>
+                <textarea style="width: 90%; height: 400px; margin-right: auto;margin-left: auto" id="conent" class="form-control" placeholder="For any request please email us at message"></textarea>
             </div>
             <div style="padding-top: 3%; padding-bottom: 10%">
-                <button type="button" class="btn btn-lg btn-success">Primary</button>
+                <button type="button" class="btn btn-lg btn-success" onclick="send()">Submit</button>
             </div>
         </div>
-    </div>-->
+    </div>
 </article>
 
 <footer>
@@ -292,5 +292,11 @@
 <script src="../js/compalMain/waypoints-sticky.js"></script>
 <script src="../js/compalMain/plugins.js"></script>
 <script src="../js/compalMain/main.js"></script>
+<script>
+    function send() {
+        alert("Done.");
+        $("#conent").val("");
+    }
+</script>
 </body>
 </html>

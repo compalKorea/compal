@@ -7,7 +7,6 @@ var express = require('express')
     , morgan = require('morgan') // logger
     , multiparty = require('multiparty')
     , util = require('util')
-    , idea = require('./routes/ideaRoute.js');
 
 var querystring = require('querystring');
 
@@ -25,7 +24,7 @@ app.use(router);
 app.use(bodyParser({uploadDir: (__dirname+'/public/upload')}));
 app.use(methodOverride());
 
-app.post('/sendIdea', function(req, res){
+/*app.post('/sendIdea', function(req, res){
     idea.ideaRoute(req, res);
 });
 
@@ -33,7 +32,7 @@ app.get('/download/:fileName', function(req, res){
     res.header("Content-Type", "application/json; charset=euc-kr");
     var fileName = req.params.fileName;
     res.download('/compal/file/'+fileName, querystring.escape('회원.xlsx'));
-});
+});*/
 
 app.get("/", function(req, res){
     /*res.redirect('/html/coming_soon.html');*/
