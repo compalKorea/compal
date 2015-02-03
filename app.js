@@ -36,7 +36,8 @@ app.get('/download/:fileName', function(req, res){
 });
 
 app.get("/", function(req, res){
-    res.redirect('/html/coming_soon.html');
+    /*res.redirect('/html/coming_soon.html');*/
+    res.redirect('/html/index.html');
 });
 
 http.createServer(app).listen(app.get('port'), function(){
