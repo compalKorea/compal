@@ -1,12 +1,9 @@
 var express = require('express')
     , http = require('http')
-    , path = require('path')
     , methodOverride = require('method-override') // methodOverride
     , favicon = require('static-favicon')
     , bodyParser = require('body-parser')
-    , morgan = require('morgan') // logger
-    , multiparty = require('multiparty')
-    , util = require('util')
+    , morgan = require('morgan') // logger;
 
 var querystring = require('querystring');
 
