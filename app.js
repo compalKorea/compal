@@ -3,9 +3,8 @@ var express = require('express')
     , methodOverride = require('method-override') // methodOverride
     , favicon = require('static-favicon')
     , bodyParser = require('body-parser')
-    , morgan = require('morgan') // logger;
+    , morgan = require('morgan'); // logger;
 
-var querystring = require('querystring');
 
 var app = express();
 var router = express.Router();
